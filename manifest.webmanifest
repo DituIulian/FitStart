@@ -1,0 +1,25 @@
+{
+  "id":"./",
+  "name":"FitStart — Ghid de sală",
+  "short_name":"FitStart",
+  "lang":"ro",
+  "dir":"ltr",
+  "start_url":"./?source=pwa",
+  "scope":"./",
+  "display":"standalone",
+  "display_override":["window-controls-overlay","standalone","minimal-ui"],
+  "orientation":"any",
+  "background_color":"#f5f3ed",
+  "theme_color":"#17352f",
+  "description":"Ghid de sală pentru începători, cu demonstrații anatomice și planuri personalizate.",
+  "categories":["fitness","health","education"],
+  "icons":[
+    {"src":"assets/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ],
+  "shortcuts":[
+    {"name":"Exerciții","short_name":"Exerciții","url":"./?view=exercises"},
+    {"name":"Planul meu","short_name":"Plan","url":"./?view=plan"},
+    {"name":"Progres","short_name":"Progres","url":"./?view=progress"}
+  ]
+}

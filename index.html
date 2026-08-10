@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#123c35">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="FitStart">
+  <meta name="description" content="FitStart — ghid practic de sală pentru începători, în limba română.">
+  <title>FitStart — Sala explicată simplu</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Sari la conținut</a>
+  <header class="topbar">
+    <button class="brand" data-view="home" aria-label="Acasă"><span>F</span> FitStart</button>
+    <div class="header-actions">
+      <button class="icon-btn" id="offlineBtn" aria-label="Animații offline">⇩</button>
+      <button class="icon-btn install-trigger" id="installBtn" aria-label="Instalează FitStart">＋</button>
+      <button class="icon-btn" id="themeBtn" aria-label="Schimbă tema">◐</button>
+      <button class="icon-btn" id="timerBtn" aria-label="Cronometru pauză">⏱</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="homeView" class="view active">
+      <div class="hero">
+        <div><p class="eyebrow">ANTRENEAZĂ-TE CU ÎNCREDERE</p><h1>Știi ce faci.<br><em>De la prima serie.</em></h1>
+          <p>Execuții explicate vizual, plan simplu și instrumente utile — toate într-un ghid care funcționează și offline.</p>
+        </div>
+        <button class="primary" data-view="exercises">Explorează exercițiile <span>→</span></button>
+      </div>
+      <section class="section"><div class="section-head"><div><p class="eyebrow">ALEGE ZONA</p><h2>Grupe musculare</h2></div><button class="text-btn" data-view="exercises">Vezi toate</button></div><div id="groupGrid" class="group-grid"></div></section>
+      <section class="starter-card"><div><p class="eyebrow light">PLANUL TĂU DE START</p><h2>3 zile. Corp complet.<br>Zero confuzie.</h2><p>Un program echilibrat cu progres gradual, creat special pentru primele 8 săptămâni.</p></div><button class="secondary" data-view="plan">Deschide planul</button></section>
+      <section class="section"><div class="section-head"><div><p class="eyebrow">CONTINUĂ</p><h2>Vizitate recent</h2></div></div><div id="recentList" class="cards-row empty-state">Încă nu ai deschis niciun exercițiu.</div></section>
+    </section>
+
+    <section id="exercisesView" class="view">
+      <div class="page-head"><p class="eyebrow">BIBLIOTECA TA</p><h1>Exerciții</h1><p>Învață forma corectă înainte să adaugi greutate.</p></div>
+      <div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Caută exercițiu, mușchi sau echipament…" aria-label="Caută exerciții"></div>
+      <div id="filterChips" class="chips" aria-label="Filtre grupe"></div>
+      <div class="filter-row">
+        <select id="difficultyFilter" aria-label="Filtru dificultate"><option value="">Orice nivel</option><option>Începător</option><option>Intermediar</option></select>
+        <select id="equipmentFilter" aria-label="Filtru echipament"><option value="">Orice echipament</option></select>
+        <button id="favoritesOnly" class="filter-button">♡ Favorite</button>
+      </div>
+      <p id="resultCount" class="result-count"></p><div id="exerciseGrid" class="exercise-grid"></div>
+    </section>
+
+    <section id="planView" class="view">
+      <div class="page-head"><p class="eyebrow">PROGRAMUL TĂU</p><h1>Plan personalizat</h1><p>Alege ce ți se potrivește, iar FitStart construiește programul din exercițiile disponibile.</p></div>
+      <section class="plan-builder" aria-labelledby="builderTitle"><div class="builder-head"><div><p class="eyebrow">GENERATOR LOCAL</p><h2 id="builderTitle">Creează programul</h2></div><button id="toggleBuilder" class="text-btn" type="button">Configurează</button></div>
+        <form id="planBuilderForm" class="builder-form" hidden>
+          <label>Obiectiv<select name="goal"><option value="general">Condiție fizică generală</option><option value="muscle">Masă musculară</option><option value="strength">Forță de bază</option><option value="fatloss">Slăbire și tonifiere</option></select></label>
+          <label>Zile disponibile<select name="days"><option value="2">2 zile / săptămână</option><option value="3" selected>3 zile / săptămână</option><option value="4">4 zile / săptămână</option><option value="5">5 zile / săptămână</option></select></label>
+          <label>Durata unei ședințe<select name="duration"><option value="30">30 minute</option><option value="45" selected>45 minute</option><option value="60">60 minute</option><option value="75">75 minute</option></select></label>
+          <fieldset><legend>Echipamente disponibile</legend><div class="option-grid"><label><input type="checkbox" name="equipment" value="greutatea corpului" checked> Greutatea corpului</label><label><input type="checkbox" name="equipment" value="gantere" checked> Gantere</label><label><input type="checkbox" name="equipment" value="aparat" checked> Aparate</label><label><input type="checkbox" name="equipment" value="cablu" checked> Cabluri</label><label><input type="checkbox" name="equipment" value="bara EZ" checked> Bară EZ</label></div></fieldset>
+          <fieldset><legend>Zone de protejat</legend><p class="field-help">Aceste opțiuni elimină mișcările care solicită frecvent zona. Nu înlocuiesc recomandarea medicului sau kinetoterapeutului.</p><div class="option-grid limitations"><label><input type="checkbox" name="limitation" value="knees"> Genunchi</label><label><input type="checkbox" name="limitation" value="back"> Zona lombară</label><label><input type="checkbox" name="limitation" value="shoulders"> Umeri</label><label><input type="checkbox" name="limitation" value="wrists"> Încheieturi</label></div></fieldset>
+          <button class="primary builder-submit" type="submit">Generează programul <span>→</span></button>
+        </form>
+        <div id="planProfile" class="plan-profile"></div>
+      </section>
+      <div class="week-progress"><div><b>Progres săptămânal</b><span id="weekProgressText">0 din 3 antrenamente</span></div><div class="progress"><i id="weekProgressBar"></i></div><button id="resetWeek" class="text-btn">Resetează săptămâna</button></div>
+      <div id="planDays" class="plan-days"></div>
+      <aside class="tip"><b>Regula progresului</b><p>Când poți face toate repetările cu o tehnică bună de două ori la rând, adaugă 2–5% greutate. Lasă 2 repetări „în rezervă”.</p></aside>
+    </section>
+
+    <section id="progressView" class="view">
+      <div class="page-head"><p class="eyebrow">JURNAL LOCAL</p><h1>Progresul meu</h1><p>Salvat doar pe acest dispozitiv.</p></div>
+      <div class="stats"><article><strong id="statWorkouts">0</strong><span>Antrenamente</span></article><article><strong id="statExercises">0</strong><span>Exerciții bifate</span></article><article><strong id="statFavs">0</strong><span>Favorite</span></article></div>
+      <div class="section-head"><h2>Jurnal greutăți</h2><button id="clearStrengthLog" class="text-btn danger">Șterge</button></div><div id="strengthHistory" class="strength-history empty-state">Nu ai încă performanțe salvate.</div>
+      <div class="section-head activity-head"><h2>Activitate</h2><button id="clearHistory" class="text-btn danger">Șterge</button></div><div id="historyList" class="history-list empty-state">Istoricul este gol.</div>
+      <div class="section-head"><h2>Notițele mele</h2></div><textarea id="notes" class="notes" placeholder="Ex: Presă piept — 20 kg, forma a fost bună…"></textarea><small>Notițele se salvează automat.</small>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navigare principală">
+    <button class="active" data-view="home"><span>⌂</span>Acasă</button><button data-view="exercises"><span>▦</span>Exerciții</button><button data-view="plan"><span>✓</span>Plan</button><button data-view="progress"><span>↗</span>Progres</button>
+  </nav>
+
+  <dialog id="exerciseModal" class="modal"><div id="modalContent"></div></dialog>
+  <dialog id="timerModal" class="timer-modal"><button class="close" data-close aria-label="Închide">×</button><p class="eyebrow">PAUZĂ ÎNTRE SERII</p><div id="timerDisplay" class="timer-display">01:30</div><div class="timer-presets"><button data-time="60">1:00</button><button data-time="90" class="active">1:30</button><button data-time="120">2:00</button><button data-time="180">3:00</button></div><button id="timerToggle" class="primary wide">Pornește</button><button id="timerReset" class="text-btn">Resetează</button></dialog>
+  <dialog id="offlineModal" class="utility-modal"><button class="close" data-close aria-label="Închide">×</button><p class="eyebrow">UTILIZARE FĂRĂ INTERNET</p><h2>Animații offline</h2><p>Aplicația de bază este mică și rapidă. Descarcă doar grupele pe care vrei să le folosești fără internet.</p><div id="offlineGroups" class="offline-groups"></div><div id="offlineProgress" class="download-progress" aria-live="polite"></div><button id="clearOffline" class="text-btn danger" type="button">Șterge animațiile descărcate</button></dialog>
+  <dialog id="installModal" class="utility-modal"><button class="close" data-close aria-label="Închide">×</button><p class="eyebrow">FITSTART PE DISPOZITIV</p><h2>Instalează aplicația</h2><div id="installInstructions"></div><button id="confirmInstall" class="primary wide" type="button">Instalează FitStart</button><small>Planurile și jurnalul rămân salvate local pe acest dispozitiv.</small></dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="data.js?v=17"></script><script src="motion.js?v=17"></script><script src="app.js?v=17"></script>
+</body>
+</html>
