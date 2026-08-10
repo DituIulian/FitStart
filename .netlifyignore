@@ -1,0 +1,7 @@
+.git/
+.github/
+.env
+.env.*
+*.log
+fitstart-backup-*.json
+SECURITY.md

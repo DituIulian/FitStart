@@ -11,7 +11,7 @@
   <title>FitStart — Sala explicată simplu</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="assets/icon-180.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=18">
 </head>
 <body>
   <a class="skip" href="#main">Sari la conținut</a>
@@ -25,7 +25,8 @@
     </div>
   </header>
 
-  <main id="main">
+  <div id="networkStatus" class="network-status" role="status" aria-live="polite" hidden></div>
+  <main id="main" tabindex="-1">
     <section id="homeView" class="view active">
       <div class="hero">
         <div><p class="eyebrow">ANTRENEAZĂ-TE CU ÎNCREDERE</p><h1>Știi ce faci.<br><em>De la prima serie.</em></h1>
@@ -74,6 +75,7 @@
       <div class="section-head"><h2>Jurnal greutăți</h2><button id="clearStrengthLog" class="text-btn danger">Șterge</button></div><div id="strengthHistory" class="strength-history empty-state">Nu ai încă performanțe salvate.</div>
       <div class="section-head activity-head"><h2>Activitate</h2><button id="clearHistory" class="text-btn danger">Șterge</button></div><div id="historyList" class="history-list empty-state">Istoricul este gol.</div>
       <div class="section-head"><h2>Notițele mele</h2></div><textarea id="notes" class="notes" placeholder="Ex: Presă piept — 20 kg, forma a fost bună…"></textarea><small>Notițele se salvează automat.</small>
+      <section class="data-backup" aria-labelledby="backupTitle"><div class="section-head"><div><p class="eyebrow">COPIE DE SIGURANȚĂ</p><h2 id="backupTitle">Datele mele</h2></div></div><p>Descarcă toate datele FitStart într-un fișier JSON sau restaurează o copie verificată.</p><div class="backup-actions"><button id="exportData" class="secondary" type="button">Exportă backup</button><label class="secondary file-button">Importă backup<input id="importData" type="file" accept="application/json,.json"></label></div><p id="backupStatus" class="field-help" role="status" aria-live="polite"></p></section>
     </section>
   </main>
 
@@ -81,11 +83,11 @@
     <button class="active" data-view="home"><span>⌂</span>Acasă</button><button data-view="exercises"><span>▦</span>Exerciții</button><button data-view="plan"><span>✓</span>Plan</button><button data-view="progress"><span>↗</span>Progres</button>
   </nav>
 
-  <dialog id="exerciseModal" class="modal"><div id="modalContent"></div></dialog>
-  <dialog id="timerModal" class="timer-modal"><button class="close" data-close aria-label="Închide">×</button><p class="eyebrow">PAUZĂ ÎNTRE SERII</p><div id="timerDisplay" class="timer-display">01:30</div><div class="timer-presets"><button data-time="60">1:00</button><button data-time="90" class="active">1:30</button><button data-time="120">2:00</button><button data-time="180">3:00</button></div><button id="timerToggle" class="primary wide">Pornește</button><button id="timerReset" class="text-btn">Resetează</button></dialog>
-  <dialog id="offlineModal" class="utility-modal"><button class="close" data-close aria-label="Închide">×</button><p class="eyebrow">UTILIZARE FĂRĂ INTERNET</p><h2>Animații offline</h2><p>Aplicația de bază este mică și rapidă. Descarcă doar grupele pe care vrei să le folosești fără internet.</p><div id="offlineGroups" class="offline-groups"></div><div id="offlineProgress" class="download-progress" aria-live="polite"></div><button id="clearOffline" class="text-btn danger" type="button">Șterge animațiile descărcate</button></dialog>
-  <dialog id="installModal" class="utility-modal"><button class="close" data-close aria-label="Închide">×</button><p class="eyebrow">FITSTART PE DISPOZITIV</p><h2>Instalează aplicația</h2><div id="installInstructions"></div><button id="confirmInstall" class="primary wide" type="button">Instalează FitStart</button><small>Planurile și jurnalul rămân salvate local pe acest dispozitiv.</small></dialog>
+  <dialog id="exerciseModal" class="modal" aria-label="Detalii exercițiu"><div id="modalContent"></div></dialog>
+  <dialog id="timerModal" class="timer-modal" aria-label="Cronometru pauză"><button class="close" data-close aria-label="Închide">×</button><p class="eyebrow">PAUZĂ ÎNTRE SERII</p><div id="timerDisplay" class="timer-display">01:30</div><div class="timer-presets"><button data-time="60">1:00</button><button data-time="90" class="active">1:30</button><button data-time="120">2:00</button><button data-time="180">3:00</button></div><button id="timerToggle" class="primary wide">Pornește</button><button id="timerReset" class="text-btn">Resetează</button></dialog>
+  <dialog id="offlineModal" class="utility-modal" aria-label="Animații offline"><button class="close" data-close aria-label="Închide">×</button><p class="eyebrow">UTILIZARE FĂRĂ INTERNET</p><h2>Animații offline</h2><p>Aplicația de bază este mică și rapidă. Descarcă doar grupele pe care vrei să le folosești fără internet.</p><div id="offlineGroups" class="offline-groups"></div><div id="offlineProgress" class="download-progress" aria-live="polite"></div><button id="clearOffline" class="text-btn danger" type="button">Șterge animațiile descărcate</button></dialog>
+  <dialog id="installModal" class="utility-modal" aria-label="Instalează FitStart"><button class="close" data-close aria-label="Închide">×</button><p class="eyebrow">FITSTART PE DISPOZITIV</p><h2>Instalează aplicația</h2><div id="installInstructions"></div><button id="confirmInstall" class="primary wide" type="button">Instalează FitStart</button><small>Planurile și jurnalul rămân salvate local pe acest dispozitiv.</small></dialog>
   <div id="toast" class="toast" role="status"></div>
-  <script src="data.js?v=17"></script><script src="motion.js?v=17"></script><script src="app.js?v=17"></script>
+  <script src="data.js?v=18"></script><script src="motion.js?v=18"></script><script src="app.js?v=18"></script>
 </body>
 </html>

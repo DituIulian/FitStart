@@ -25,6 +25,12 @@ Din butonul `⇩` poți descărca separat numai grupele musculare dorite. Nucleu
 
 Favoritele, istoricul, progresul, tema și notițele sunt salvate doar în `localStorage`, în browserul utilizatorului. Nu există backend, conturi, tracking sau servicii plătite.
 
+Pagina „Progres” permite exportul tuturor datelor într-un backup JSON și restaurarea unei copii validate. Fișierele de backup sunt excluse implicit din Git și din publicarea Netlify.
+
+## Verificare înainte de publicare
+
+Rulează `npm test`. Auditul verifică numărul și instrucțiunile exercițiilor, existența demonstrațiilor, versiunea cache-ului, CSP, backupul și protecțiile Git/Netlify. Workflow-ul GitHub rulează aceeași verificare la pull request și la push în `main`; activați-l ca status check obligatoriu în regulile ramurii.
+
 ## Funcții incluse
 
 - 69 de exerciții pentru 23 de porțiuni musculare din 8 grupe;
@@ -39,8 +45,7 @@ Favoritele, istoricul, progresul, tema și notițele sunt salvate doar în `loca
 - toate cele 9 exerciții din grupa Triceps au demonstrații anatomice premium dedicate capului lung, lateral și medial;
 - toate cele 9 exerciții din grupa Abdomen au demonstrații anatomice premium pentru abdomen superior, inferior, oblici și core;
 - toate cele 6 exerciții din grupa Antebrațe au demonstrații anatomice premium pentru flexori, extensori, priză și rotația antebrațului;
-- player de studiu fluid pentru demonstrațiile anatomice: cadrele sunt pregătite la deschiderea exercițiului și interpolate în timpul redării;
-- viteze 0,25×, 0,5× și 1× care controlează cronologia reală, plus pauză și navigare cadru cu cadru;
+- player nativ cu memorie redusă pentru demonstrațiile anatomice, inclusiv fallback sigur pe iPhone și dispozitive cu memorie limitată;
 - repere vizuale opționale, fără săgeți direcționale, adaptate tipului de mișcare: coloană și șold, genunchi, coate și amplitudine;
 - animația originală rămâne disponibilă ca variantă de rezervă dacă browserul nu poate decoda individual cadrele WebP;
 - căutare și filtre după grupă, dificultate și echipament;
