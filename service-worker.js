@@ -1,8 +1,8 @@
-const VERSION='v20';
+const VERSION='v21';
 const CORE_CACHE=`fitstart-core-${VERSION}`;
 // Animațiile selectate pentru offline rămân disponibile după actualizări.
 const MEDIA_CACHE='fitstart-media-v1';
-const CORE=['./','./index.html','./styles.css?v=20','./data.js?v=20','./motion.js?v=20','./app.js?v=20','./manifest.webmanifest','./assets/anatomy-sprites.png','./assets/icon-192.png','./assets/icon-512.png','./assets/icon-180.png'];
+const CORE=['./','./index.html','./styles.css?v=21','./data.js?v=21','./motion.js?v=21','./app.js?v=21','./manifest.webmanifest','./assets/anatomy-sprites.png','./assets/icon-192.png','./assets/icon-512.png','./assets/icon-180.png'];
 const GROUPS={
   'Piept':['impins-inclinat-gantere.webp','impins-inclinat-aparat.webp','fluturari-jos-sus.webp','impins-piept-gantere.webp','presa-piept-aparat.webp','flotari-clasice.webp','flotari-ridicate.webp','impins-declinat-aparat.webp','fluturari-sus-jos.webp'],
   'Spate':['tractiuni-asistate.webp','helcometru-neutru.webp','pullover-cablu.webp','ramat-aparat.webp','ramat-cablu.webp','fluturari-inverse.webp','extensii-lombare-corect.webp','bird-dog.webp','indreptari-romanesti.webp'],
