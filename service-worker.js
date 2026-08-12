@@ -1,9 +1,10 @@
-const VERSION='v24';
+const VERSION='v27';
 const CORE_CACHE=`fitstart-core-${VERSION}`;
 // Animațiile selectate pentru offline rămân disponibile după actualizări.
 const MEDIA_CACHE='fitstart-media-v1';
-const CORE=['./','./index.html','./styles.css?v=24','./data.js?v=24','./motion.js?v=24','./app.js?v=24','./manifest.webmanifest','./assets/anatomy-sprites.png','./assets/icon-192.png','./assets/icon-512.png','./assets/icon-180.png'];
+const CORE=['./','./index.html','./styles.css?v=27','./data.js?v=27','./motion.js?v=27','./app.js?v=27','./manifest.webmanifest','./assets/anatomy-sprites.png','./assets/icon-192.png','./assets/icon-512.png','./assets/icon-180.png'];
 const GROUPS={
+  'Acasă':['flotari-clasice.webp','flotari-ridicate.webp','bird-dog.webp','genuflexiune-cutie.webp','podul-fesier.webp','ridicari-varfuri-picioare.webp','flotari-inguste-banca.webp','crunch-saltea.webp','reverse-crunch.webp','dead-bug.webp','plansa-laterala-genunchi.webp','home-flotari-perete.webp','home-flotari-scaun.webp','home-flotari-genunchi.webp','home-ramat-izometric-prosop.webp','home-ingeri-inversati.webp','home-ridicari-ytw.webp','home-flotari-pike-scaun.webp','home-ridicari-laterale-sticle.webp','home-alunecari-brate-perete.webp','home-genuflexiuni-scaun.webp','home-fandari-inverse-scaun.webp','home-pod-fesier-unilateral.webp','home-flexii-femurali-prosop.webp','home-ridicari-varfuri-perete.webp','home-flexii-rucsac.webp','home-flexii-izometrice-prosop.webp','home-flexii-alternative-sticle.webp','home-extensii-triceps-perete.webp','home-flotari-inguste-scaun.webp','home-flotari-diamant-genunchi.webp','home-dead-bug-perete.webp','home-crunch-picioare-scaun.webp','home-plansa-laterala-scurta.webp','home-stoarcere-prosop.webp','home-mentinere-rucsac.webp','home-extensii-degete-elastic.webp'],
   'Piept':['impins-inclinat-gantere.webp','impins-inclinat-aparat.webp','fluturari-jos-sus.webp','impins-piept-gantere.webp','presa-piept-aparat.webp','flotari-clasice.webp','flotari-ridicate.webp','impins-declinat-aparat.webp','fluturari-sus-jos.webp'],
   'Spate':['tractiuni-asistate.webp','helcometru-neutru.webp','pullover-cablu.webp','ramat-aparat.webp','ramat-cablu.webp','fluturari-inverse.webp','extensii-lombare-corect.webp','bird-dog.webp','indreptari-romanesti.webp'],
   'Umeri':['presa-umeri-aparat.webp','ridicari-frontale-disc.webp','landmine-unilateral.webp','ridicari-laterale-gantere.webp','ridicari-laterale-cablu.webp','ridicari-laterale-aparat.webp','fluturari-inverse.webp','face-pull.webp','ridicari-posterioare-banca.webp'],

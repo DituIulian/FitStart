@@ -7,11 +7,11 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="FitStart">
-  <meta name="description" content="FitStart — ghid practic de sală pentru începători, în limba română.">
-  <title>FitStart — Sala explicată simplu</title>
+  <meta name="description" content="FitStart — ghid practic de antrenament pentru începători, la sală sau acasă, în limba română.">
+  <title>FitStart — Antrenamentul explicat simplu</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="assets/icon-180.png">
-  <link rel="stylesheet" href="styles.css?v=24">
+  <link rel="stylesheet" href="styles.css?v=27">
 </head>
 <body>
   <a class="skip" href="#main">Sari la conținut</a>
@@ -35,6 +35,7 @@
         <button class="primary" data-view="exercises">Explorează exercițiile <span>→</span></button>
       </div>
       <section class="section"><div class="section-head"><div><p class="eyebrow">ALEGE ZONA</p><h2>Grupe musculare</h2></div><button class="text-btn" data-view="exercises">Vezi toate</button></div><div id="groupGrid" class="group-grid"></div></section>
+      <section class="home-feature-card"><div class="home-feature-copy"><span class="home-feature-icon">⌂</span><div><p class="eyebrow light">NOU · FĂRĂ ABONAMENT SAU APARATE</p><h2>Antrenament acasă</h2><p>Greutatea corpului, un scaun stabil, peretele, un prosop și obiecte pe care le ai deja.</p></div></div><button class="primary" data-view="homeTraining">Intră în zona Acasă <span>→</span></button></section>
       <section class="starter-card"><div><p class="eyebrow light">PLANUL TĂU DE START</p><h2>3 zile. Corp complet.<br>Zero confuzie.</h2><p>Un program echilibrat cu progres gradual, creat special pentru primele 8 săptămâni.</p></div><button class="secondary" data-view="plan">Deschide planul</button></section>
       <section class="section"><div class="section-head"><div><p class="eyebrow">CONTINUĂ</p><h2>Vizitate recent</h2></div></div><div id="recentList" class="cards-row empty-state">Încă nu ai deschis niciun exercițiu.</div></section>
     </section>
@@ -51,6 +52,27 @@
       <p id="resultCount" class="result-count"></p><div id="exerciseGrid" class="exercise-grid"></div>
     </section>
 
+    <section id="homeTrainingView" class="view">
+      <div class="home-training-hero"><div><p class="eyebrow light">FITSTART ACASĂ</p><h1>Camera ta.<br><em>Antrenamentul tău.</em></h1><p>Mișcări explicate pas cu pas, fără aparate de sală. Folosești doar greutatea corpului și obiecte stabile, ușor de găsit.</p></div><div class="home-kit" aria-label="Echipamente pentru acasă"><span>Corpul tău</span><span>Scaun</span><span>Perete</span><span>Prosop</span><span>Rucsac sau sticle</span></div></div>
+
+      <section class="home-plan-builder" aria-labelledby="homePlanTitle"><div class="builder-head"><div><p class="eyebrow">PROGRAM GATA ÎN CÂTEVA SECUNDE</p><h2 id="homePlanTitle">Creează planul pentru acasă</h2></div><span class="home-badge">100% local</span></div><p>Planul folosește același mod ghidat, cronometru, progres și jurnal ca antrenamentele de sală.</p>
+        <form id="homePlanForm" class="builder-form home-builder-form">
+          <label>Obiectiv<select name="goal"><option value="general">Condiție fizică generală</option><option value="muscle">Tonifiere și masă musculară</option><option value="strength">Forță de bază</option><option value="fatloss">Slăbire și rezistență</option></select></label>
+          <label>Zile disponibile<select name="days"><option value="2">2 zile / săptămână</option><option value="3" selected>3 zile / săptămână</option><option value="4">4 zile / săptămână</option><option value="5">5 zile / săptămână</option></select></label>
+          <label>Durata ședinței<select name="duration"><option value="20">20 minute</option><option value="30" selected>30 minute</option><option value="45">45 minute</option><option value="60">60 minute</option></select></label>
+          <fieldset><legend>Ce ai la dispoziție?</legend><p class="field-help">Greutatea corpului este inclusă automat.</p><div class="option-grid home-options"><label><input type="checkbox" name="homeEquipment" value="scaun" checked> Scaun stabil</label><label><input type="checkbox" name="homeEquipment" value="perete" checked> Perete liber</label><label><input type="checkbox" name="homeEquipment" value="prosop" checked> Prosop rezistent</label><label><input type="checkbox" name="homeEquipment" value="obiecte casnice" checked> Rucsac / sticle</label></div></fieldset>
+          <fieldset><legend>Zone de protejat</legend><p class="field-help">Filtrarea este preventivă și nu înlocuiește recomandarea medicului sau kinetoterapeutului.</p><div class="option-grid limitations"><label><input type="checkbox" name="limitation" value="knees"> Genunchi</label><label><input type="checkbox" name="limitation" value="back"> Zona lombară</label><label><input type="checkbox" name="limitation" value="shoulders"> Umeri</label><label><input type="checkbox" name="limitation" value="wrists"> Încheieturi</label></div></fieldset>
+          <button class="primary builder-submit" type="submit">Generează planul Acasă <span>→</span></button>
+        </form>
+      </section>
+
+      <aside class="home-safety"><span>!</span><div><b>Regula obiectelor stabile</b><p>Blochează scaunul lângă perete, evită scaunele cu roți și verifică prosopul, rucsacul și sticlele înainte de fiecare serie.</p></div></aside>
+
+      <section class="home-library"><div class="section-head"><div><p class="eyebrow">BIBLIOTECĂ PENTRU ACASĂ</p><h2>Exerciții fără aparate</h2></div></div><p class="home-filter-label">Grupe musculare</p><div id="homeGroupChips" class="chips" aria-label="Filtre grupe pentru acasă"></div><p class="home-filter-label">Ce folosești</p><div id="homeEquipmentChips" class="chips home-equipment-chips" aria-label="Filtre echipamente pentru acasă"></div><p id="homeExerciseCount" class="result-count"></p><div id="homeExerciseGrid" class="exercise-grid"></div></section>
+
+      <aside class="home-warmup"><div><p class="eyebrow">ÎNAINTE DE PRIMA SERIE</p><h2>Încălzire rapidă · 5 minute</h2></div><ol><li><b>1 min</b> mers alert pe loc</li><li><b>1 min</b> rotiri controlate de umeri și brațe</li><li><b>1 min</b> genuflexiuni scurte la scaun</li><li><b>1 min</b> aplecări din șold fără greutate</li><li><b>1 min</b> repetări ușoare din primul exercițiu</li></ol></aside>
+    </section>
+
     <section id="planView" class="view">
       <div class="page-head"><p class="eyebrow">PROGRAMUL TĂU</p><h1>Plan personalizat</h1><p>Alege ce ți se potrivește, iar FitStart construiește programul din exercițiile disponibile.</p></div>
       <section class="plan-builder" aria-labelledby="builderTitle"><div class="builder-head"><div><p class="eyebrow">GENERATOR LOCAL</p><h2 id="builderTitle">Creează programul</h2></div><button id="toggleBuilder" class="text-btn" type="button">Configurează</button></div>
@@ -58,7 +80,7 @@
           <label>Obiectiv<select name="goal"><option value="general">Condiție fizică generală</option><option value="muscle">Masă musculară</option><option value="strength">Forță de bază</option><option value="fatloss">Slăbire și tonifiere</option></select></label>
           <label>Zile disponibile<select name="days"><option value="2">2 zile / săptămână</option><option value="3" selected>3 zile / săptămână</option><option value="4">4 zile / săptămână</option><option value="5">5 zile / săptămână</option></select></label>
           <label>Durata unei ședințe<select name="duration"><option value="30">30 minute</option><option value="45" selected>45 minute</option><option value="60">60 minute</option><option value="75">75 minute</option></select></label>
-          <fieldset><legend>Echipamente disponibile</legend><div class="option-grid"><label><input type="checkbox" name="equipment" value="greutatea corpului" checked> Greutatea corpului</label><label><input type="checkbox" name="equipment" value="gantere" checked> Gantere</label><label><input type="checkbox" name="equipment" value="aparat" checked> Aparate</label><label><input type="checkbox" name="equipment" value="cablu" checked> Cabluri</label><label><input type="checkbox" name="equipment" value="bara EZ" checked> Bară EZ</label></div></fieldset>
+          <fieldset><legend>Echipamente disponibile</legend><div class="option-grid"><label><input type="checkbox" name="equipment" value="greutatea corpului" checked> Greutatea corpului</label><label><input type="checkbox" name="equipment" value="gantere" checked> Gantere</label><label><input type="checkbox" name="equipment" value="aparat" checked> Aparate</label><label><input type="checkbox" name="equipment" value="cablu" checked> Cabluri</label><label><input type="checkbox" name="equipment" value="bara EZ" checked> Bară EZ</label><label><input type="checkbox" name="equipment" value="scaun"> Scaun</label><label><input type="checkbox" name="equipment" value="perete"> Perete</label><label><input type="checkbox" name="equipment" value="prosop"> Prosop</label><label><input type="checkbox" name="equipment" value="obiecte casnice"> Rucsac / sticle</label></div></fieldset>
           <fieldset><legend>Zone de protejat</legend><p class="field-help">Aceste opțiuni elimină mișcările care solicită frecvent zona. Nu înlocuiesc recomandarea medicului sau kinetoterapeutului.</p><div class="option-grid limitations"><label><input type="checkbox" name="limitation" value="knees"> Genunchi</label><label><input type="checkbox" name="limitation" value="back"> Zona lombară</label><label><input type="checkbox" name="limitation" value="shoulders"> Umeri</label><label><input type="checkbox" name="limitation" value="wrists"> Încheieturi</label></div></fieldset>
           <button class="primary builder-submit" type="submit">Generează programul <span>→</span></button>
         </form>
@@ -82,7 +104,7 @@
   </main>
 
   <nav class="bottom-nav" aria-label="Navigare principală">
-    <button class="active" data-view="home"><span>⌂</span>Acasă</button><button data-view="exercises"><span>▦</span>Exerciții</button><button data-view="plan"><span>✓</span>Plan</button><button data-view="progress"><span>↗</span>Progres</button>
+    <button class="active" data-view="home"><span>●</span>Start</button><button data-view="homeTraining"><span>⌂</span>Acasă</button><button data-view="exercises"><span>▦</span>Exerciții</button><button data-view="plan"><span>✓</span>Plan</button><button data-view="progress"><span>↗</span>Progres</button>
   </nav>
 
   <dialog id="exerciseModal" class="modal" aria-label="Detalii exercițiu"><div id="modalContent"></div></dialog>
@@ -94,6 +116,6 @@
   <dialog id="replaceExerciseModal" class="utility-modal replace-exercise-modal" aria-labelledby="replaceExerciseTitle"><button class="close" data-close aria-label="Închide">×</button><p class="eyebrow">ALTERNATIVĂ COMPATIBILĂ</p><h2 id="replaceExerciseTitle">Înlocuiește exercițiul</h2><p>Alege o mișcare pentru aceeași zonă musculară, compatibilă cu echipamentul și limitările planului.</p><div id="replacementOptions" class="replacement-options"></div></dialog>
   <dialog id="editPlanDayModal" class="utility-modal edit-plan-modal" aria-labelledby="editPlanDayTitle"><button class="close" data-close aria-label="Închide">×</button><p class="eyebrow">ORDINE ȘI CONȚINUT</p><h2 id="editPlanDayTitle">Editează ziua</h2><p>Mută, elimină sau adaugă exerciții. Sunt afișate doar opțiunile compatibile cu echipamentul și limitările tale.</p><ol id="editPlanDayList" class="edit-plan-list"></ol><div class="add-plan-exercise"><label for="addPlanExerciseSelect">Adaugă exercițiu</label><select id="addPlanExerciseSelect"></select><button id="addPlanExercise" class="secondary" type="button">Adaugă</button></div><div class="edit-plan-actions"><button id="savePlanDayEdit" class="primary" type="button">Salvează ziua</button><button id="restorePlanDay" class="text-btn" type="button">Revino la structura inițială</button></div><small>Editarea zilei resetează doar progresul acelei zile; istoricul rămâne salvat.</small></dialog>
   <div id="toast" class="toast" role="status"></div>
-  <script src="data.js?v=24"></script><script src="motion.js?v=24"></script><script src="app.js?v=24"></script>
+  <script src="data.js?v=27"></script><script src="motion.js?v=27"></script><script src="app.js?v=27"></script>
 </body>
 </html>

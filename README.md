@@ -1,6 +1,6 @@
 # FitStart
 
-Aplicație statică mobile-first în limba română pentru începători la sală.
+Aplicație statică mobile-first în limba română pentru începători, cu antrenamente la sală și acasă.
 
 ## Utilizare locală
 
@@ -33,7 +33,11 @@ Rulează `npm test`. Auditul verifică numărul și instrucțiunile exercițiilo
 
 ## Funcții incluse
 
-- 69 de exerciții pentru 23 de porțiuni musculare din 8 grupe;
+- 95 de exerciții pentru 8 grupe musculare, dintre care 37 pot fi executate acasă;
+- zonă dedicată „Acasă”, cu 26 de exerciții noi pentru greutatea corpului, scaun, perete, prosop, rucsac și sticle;
+- toate cele 26 de exerciții noi folosesc demonstrații anatomice premium `960 × 540`, cu 50–92 de cadre și mișcare dedicată;
+- generator separat de programe pentru acasă, conectat la modul ghidat, cronometru, adaptare, editarea zilelor și jurnal;
+- filtre pe grupe și obiecte disponibile, recomandări de siguranță și încălzire rapidă de 5 minute;
 - două animații Canvas pe cadre pentru fiecare exercițiu: corect (verde) și greșeală specifică (roșu), cu poziții articulare, traiectorii și echipament;
 - același manechin anatomic articulat este folosit în toate demonstrațiile, construit din componente generate după ghidul vizual al aplicației;
 - exercițiul „Extensii lombare” include demonstrația anatomică premium, montată cadru cu cadru și explicată în română;
